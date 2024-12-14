@@ -180,7 +180,7 @@ resource "aws_eip" "tokyotest-nat" {
 
 resource "aws_nat_gateway" "tokyotest-nat" {
   allocation_id = aws_eip.tokyotest-nat.id
-  subnet_id     = aws_subnet.tokyotest-public-subnet-1a.id
+  subnet_id     = aws_subnet.tokyotest-public-subnet-1d.id
   provider = aws.tokyo-testb
 
   tags = {

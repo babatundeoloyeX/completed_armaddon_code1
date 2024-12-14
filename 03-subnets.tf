@@ -430,10 +430,10 @@ resource "aws_subnet" "california-private-subnet-1b"{
 
 #Public Subnet Tokyo Test
 
-resource "aws_subnet" "tokyotest-public-subnet-1a"{                
+resource "aws_subnet" "tokyotest-public-subnet-1d"{                
     vpc_id = aws_vpc.tokyotest-vpc.id                     
-    cidr_block = var.subnet_cidr_block_tokyotest-public1a              
-    availability_zone = var.avail_zone_tokyotest-public1a   
+    cidr_block = var.subnet_cidr_block_tokyotest-public1d              
+    availability_zone = var.avail_zone_tokyotest-public1d   
     provider    = aws.tokyo-testb     
     tags = {                                           
         Name: "${var.env_prefix_tokyotest}-subnet-1a"  
@@ -445,13 +445,13 @@ resource "aws_subnet" "tokyotest-public-subnet-1a"{
 
 #Private Subnet Tokyo Test
 
-resource "aws_subnet" "tokyotest-private-subnet-1a"{                
+resource "aws_subnet" "tokyotest-private-subnet-1d"{                
     vpc_id = aws_vpc.tokyotest-vpc.id                     
-    cidr_block = var.subnet_cidr_block_tokyotest-private1a              
-    availability_zone = var.avail_zone_tokyotest-private1a  
+    cidr_block = var.subnet_cidr_block_tokyotest-private1d              
+    availability_zone = var.avail_zone_tokyotest-private1d  
     provider    = aws.tokyo-testb      
     tags = {                                           
-        Name: "${var.env_prefix_tokyotest}-subnet-1a"  
+        Name: "${var.env_prefix_tokyotest}-subnet-1d"  
         Service: "Armageddon Phase 1"   
         Owner = "MATTRESS AVENGERS"         
     }

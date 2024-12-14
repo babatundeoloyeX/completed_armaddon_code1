@@ -221,23 +221,23 @@ variable avail_zone_california-private1b {}
 
 #Tokyo Test public Subnet CIDR Block Variables
 
-variable subnet_cidr_block_tokyotest-public1a {}
+variable subnet_cidr_block_tokyotest-public1d {}
 
 
 
 #Tokyo Test private Subnet CIDR Block Variables
 
-variable subnet_cidr_block_tokyotest-private1a {}
+variable subnet_cidr_block_tokyotest-private1d {}
 
 /////////////////////////////////////////////////////////////
 
 #Tokyo Test AZ Variables  
 
-variable avail_zone_tokyotest-public1a {} 
+variable avail_zone_tokyotest-public1d {} 
 
 
 
-variable avail_zone_tokyotest-private1a {} 
+variable avail_zone_tokyotest-private1d {} 
 
 ////////////////////////////////////////////////////////////
 

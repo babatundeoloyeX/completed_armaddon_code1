@@ -10,27 +10,22 @@ resource "aws_route_table" "tokyo-private" {
   vpc_id = aws_vpc.tokyo-vpc.id
   provider = aws.tokyo
 
-  route = [
-    {
+  
+route {
+  cidr_block = "172.19.0.0/16"
+  transit_gateway_id  = aws_ec2_transit_gateway.tokyo_tgw.id
+  }
+
+
+  route {
+    
       cidr_block                 = "0.0.0.0/0"
       nat_gateway_id             = aws_nat_gateway.tokyo-nat.id
-      carrier_gateway_id         = null
-      destination_prefix_list_id = null
-      egress_only_gateway_id     = null
-      gateway_id                 = null
-      instance_id                = null
-      ipv6_cidr_block            = null
-      local_gateway_id           = null
-      network_interface_id       = null
-      transit_gateway_id         = null
-      vpc_endpoint_id            = null
-      vpc_peering_connection_id  = null
-      core_network_arn           = null
-    },
-  ]
+        
+  }
 
   tags = {
-    Name = "tokyo-private"
+    Name: "${var.env_prefix_tokyo}-private-rtb"
   }
 }
 
@@ -40,15 +35,14 @@ resource "aws_route_table" "tokyo-public" {
   vpc_id = aws_vpc.tokyo-vpc.id
   provider = aws.tokyo
 
-  route = [
-    {
+  route {
       cidr_block                 = "0.0.0.0/0"
       gateway_id                 = aws_internet_gateway.tokyo-igw.id
       nat_gateway_id             = null
       carrier_gateway_id         = null
       destination_prefix_list_id = null
       egress_only_gateway_id     = null
-      instance_id                = null
+      #instance_id                = null
       ipv6_cidr_block            = null
       local_gateway_id           = null
       network_interface_id       = null
@@ -56,12 +50,16 @@ resource "aws_route_table" "tokyo-public" {
       vpc_endpoint_id            = null
       vpc_peering_connection_id  = null
       core_network_arn           = null
-    },
-  ]
+    }
+  route {
+  cidr_block = "172.19.0.0/16"
+  transit_gateway_id  = aws_ec2_transit_gateway.tokyo_tgw.id
+  }
 
   tags = {
-    Name = "tokyo-public"
+    Name: "${var.env_prefix_tokyo}-public-rtb"
   }
+
 }
 
 
@@ -107,15 +105,14 @@ resource "aws_route_table" "newyork-private" {
   vpc_id = aws_vpc.newyork-vpc.id
   provider = aws.new-york
 
-  route = [
-    {
+  route {
       cidr_block                 = "0.0.0.0/0"
       nat_gateway_id             = aws_nat_gateway.newyork-nat.id
       carrier_gateway_id         = null
       destination_prefix_list_id = null
       egress_only_gateway_id     = null
       gateway_id                 = null
-      instance_id                = null
+      #instance_id                = null
       ipv6_cidr_block            = null
       local_gateway_id           = null
       network_interface_id       = null
@@ -123,12 +120,16 @@ resource "aws_route_table" "newyork-private" {
       vpc_endpoint_id            = null
       vpc_peering_connection_id  = null
       core_network_arn           = null
-    },
-  ]
+    }
+  /*route {
+  cidr_block = "172.18.0.0/16"
+  transit_gateway_id  = aws_ec2_transit_gateway.newyork_tgw.id
+  }
 
   tags = {
-    Name = "newyork-private"
+    Name: "${var.env_prefix_newyork}-private-rtb"
   }
+*/
 }
 
 
@@ -140,15 +141,14 @@ resource "aws_route_table" "newyork-public" {
   vpc_id = aws_vpc.newyork-vpc.id
   provider = aws.new-york
 
-  route = [
-    {
+  route  {
       cidr_block                 = "0.0.0.0/0"
       gateway_id                 = aws_internet_gateway.newyork-igw.id
       nat_gateway_id             = null
       carrier_gateway_id         = null
       destination_prefix_list_id = null
       egress_only_gateway_id     = null
-      instance_id                = null
+      #instance_id                = null
       ipv6_cidr_block            = null
       local_gateway_id           = null
       network_interface_id       = null
@@ -156,13 +156,19 @@ resource "aws_route_table" "newyork-public" {
       vpc_endpoint_id            = null
       vpc_peering_connection_id  = null
       core_network_arn           = null
-    },
-  ]
+    } 
+/*route {
+  cidr_block = "172.18.0.0/16"
+  transit_gateway_id  = aws_ec2_transit_gateway.newyork_tgw.id
+  }
 
   tags = {
-    Name = "newyork-public"
+    Name: "${var.env_prefix_newyork}-public-rtb"
   }
+*/
+
 }
+
 
 
 //New York Private Route Table Associations
@@ -226,7 +232,7 @@ resource "aws_route_table" "london-private" {
   ]
 
   tags = {
-    Name = "london-private"
+    Name: "${var.env_prefix_london}-private-rtb"
   }
 }
 
@@ -258,7 +264,7 @@ resource "aws_route_table" "london-public" {
   ]
 
   tags = {
-    Name = "london-public"
+    Name: "${var.env_prefix_london}-public-rtb"
   }
 }
 
@@ -325,7 +331,7 @@ resource "aws_route_table" "saopaulo-private" {
   ]
 
   tags = {
-    Name = "saopaulo-private"
+    Name: "${var.env_prefix_saopaulo}-private-rtb"
   }
 }
 
@@ -356,7 +362,7 @@ resource "aws_route_table" "saopaulo-public" {
   ]
 
   tags = {
-    Name = "saopaulo-public"
+    Name: "${var.env_prefix_saopaulo}-public-rtb"
   }
 }
 
@@ -423,7 +429,7 @@ resource "aws_route_table" "australia-private" {
   ]
 
   tags = {
-    Name = "australia-private"
+    Name: "${var.env_prefix_australia}-private-rtb"
   }
 }
 
@@ -455,7 +461,7 @@ resource "aws_route_table" "australia-public" {
   ]
 
   tags = {
-    Name = "australia-public"
+    Name: "${var.env_prefix_australia}-public-rtb"
   }
 }
 
@@ -523,7 +529,7 @@ resource "aws_route_table" "hongkong-private" {
   ]
 
   tags = {
-    Name = "hongkong-private"
+    Name: "${var.env_prefix_hongkong}-private-rtb"
   }
 }
 
@@ -555,7 +561,7 @@ resource "aws_route_table" "hongkong-public" {
   ]
 
   tags = {
-    Name = "hongkong-public"
+    Name: "${var.env_prefix_hongkong}-public-rtb"
   }
 }
 
@@ -621,7 +627,7 @@ resource "aws_route_table" "california-private" {
   ]
 
   tags = {
-    Name = "california-private"
+    Name: "${var.env_prefix_california}-private-rtb"
   }
 }
 
@@ -652,7 +658,7 @@ resource "aws_route_table" "california-public" {
   ]
 
   tags = {
-    Name = "california-public"
+    Name: "${var.env_prefix_california}-public-rtb"
   }
 }
 
@@ -716,7 +722,7 @@ resource "aws_route_table" "tokyotest-private" {
   ]
 
   tags = {
-    Name = "tokyotest-private"
+    Name: "${var.env_prefix_tokyotest}-private-rtb"
   }
 }
 
@@ -744,7 +750,7 @@ resource "aws_route_table" "tokyotest-public" {
   ]
 
   tags = {
-    Name = "tokyotest-public"
+    Name: "${var.env_prefix_tokyotest}-public-rtb"
   }
 }
 
@@ -752,7 +758,7 @@ resource "aws_route_table" "tokyotest-public" {
 
 resource "aws_route_table_association" "tokyotest-private-b" {
   provider = aws.tokyo-testb
-  subnet_id      = aws_subnet.tokyotest-private-subnet-1a.id
+  subnet_id      = aws_subnet.tokyotest-private-subnet-1d.id
   route_table_id = aws_route_table.tokyotest-private.id
 }
 
@@ -760,6 +766,6 @@ resource "aws_route_table_association" "tokyotest-private-b" {
 
 resource "aws_route_table_association" "tokyotest-public-a" {
   provider = aws.tokyo-testb
-  subnet_id      = aws_subnet.tokyotest-public-subnet-1a.id
+  subnet_id      = aws_subnet.tokyotest-public-subnet-1d.id
   route_table_id = aws_route_table.tokyotest-public.id
 }
