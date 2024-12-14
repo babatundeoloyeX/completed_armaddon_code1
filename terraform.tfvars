@@ -150,7 +150,7 @@ avail_zone_saopaulo-public1c = "sa-east-1c"
 #Sau Paulo private AZ assigned values to Variables
 
 avail_zone_saopaulo-private1a = "sa-east-1a" 
-avail_zone_saopaulo-private1c = "sa-east-1b"
+avail_zone_saopaulo-private1c = "sa-east-1c"
 
 //////////////////////////////////////////////////////////////////////////
 
@@ -244,7 +244,7 @@ avail_zone_california-private1b = "us-west-1b"
 
 #Tokyo Test public subnet CIDR Block aasigned values to Variables
 
-subnet_cidr_block_tokyotest-public1a = "172.26.1.0/24"
+subnet_cidr_block_tokyotest-public1d = "172.26.4.0/24"
 #subnet_cidr_block_tokyo-public1d = "172.18.4.0/24"
 
 
@@ -252,20 +252,20 @@ subnet_cidr_block_tokyotest-public1a = "172.26.1.0/24"
 #Tokyo Test private subnet CIDR Block aasigned values to Variables
 
 
-subnet_cidr_block_tokyotest-private1a = "172.26.11.0/24"
-#subnet_cidr_block_tokyo-private1d = "172.18.14.0/24"
+#subnet_cidr_block_tokyotest-private1a = "172.26.11.0/24"
+subnet_cidr_block_tokyotest-private1d = "172.26.14.0/24"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#California public AZ assigned values to Variables
+#Tokyo Test public AZ assigned values to Variables
 
-avail_zone_tokyotest-public1a = "ap-northeast-1a" 
+avail_zone_tokyotest-public1d = "ap-northeast-1a" 
 
 
 
-#California private AZ assigned values to Variables
+#Tokyo Test private AZ assigned values to Variables
 
-avail_zone_tokyotest-private1a = "ap-northeast-1a" 
+avail_zone_tokyotest-private1d = "ap-northeast-1d" 
 
 ////////////////////////////////////////////////////////////////////////////////
 
