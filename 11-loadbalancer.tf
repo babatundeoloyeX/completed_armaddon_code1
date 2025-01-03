@@ -255,7 +255,7 @@
    load_balancer_type = "application"
    security_groups    = [aws_security_group.california-SG02-LB01.id]
    subnets            = [
-     aws_subnet.california-public-subnet-1c.id,
+     aws_subnet.california-public-subnet-1a.id,
      aws_subnet.california-public-subnet-1b.id,
    ]
    enable_deletion_protection = false

@@ -216,7 +216,7 @@ avail_zone_hongkong-private1b = "ap-east-1b"
 
 #California public subnet CIDR Block aasigned values to Variables
 
-subnet_cidr_block_california-public1c = "172.24.3.0/24"
+subnet_cidr_block_california-public1a = "172.24.1.0/24"
 subnet_cidr_block_california-public1b = "172.24.2.0/24"
 
 
@@ -224,20 +224,20 @@ subnet_cidr_block_california-public1b = "172.24.2.0/24"
 #California private subnet CIDR Block aasigned values to Variables
 
 
-subnet_cidr_block_california-private1c = "172.24.13.0/24"
+subnet_cidr_block_california-private1a = "172.24.11.0/24"
 subnet_cidr_block_california-private1b = "172.24.12.0/24"
 
 ///////////////////////////////////////////////////////////////////////////////
 
 #California public AZ assigned values to Variables
 
-avail_zone_california-public1c = "us-west-1c" 
+avail_zone_california-public1a = "us-west-1a" 
 avail_zone_california-public1b = "us-west-1b"
 
 
 #California private AZ assigned values to Variables
 
-avail_zone_california-private1c = "us-west-1c" 
+avail_zone_california-private1a = "us-west-1a" 
 avail_zone_california-private1b = "us-west-1b"
 
 //////////////////////////////////////////////////////////////////////////////

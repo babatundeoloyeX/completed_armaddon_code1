@@ -156,7 +156,7 @@ resource "aws_eip" "california-nat" {
 
 resource "aws_nat_gateway" "california-nat" {
   allocation_id = aws_eip.california-nat.id
-  subnet_id     = aws_subnet.california-public-subnet-1c.id
+  subnet_id     = aws_subnet.california-public-subnet-1a.id
   provider = aws.california
 
   tags = {

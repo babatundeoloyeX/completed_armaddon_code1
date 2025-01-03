@@ -195,26 +195,26 @@ variable avail_zone_hongkong-private1b {}
 
 #California public Subnet CIDR Block Variables
 
-variable subnet_cidr_block_california-public1c {}
+variable subnet_cidr_block_california-public1a {}
 variable subnet_cidr_block_california-public1b {}
 
 
 
 #California private Subnet CIDR Block Variables
 
-variable subnet_cidr_block_california-private1c {}
+variable subnet_cidr_block_california-private1a {}
 variable subnet_cidr_block_california-private1b {}
 
 //////////////////////////////////////////////////////////////
 
 #California AZ Variables  
 
-variable avail_zone_california-public1c {} 
+variable avail_zone_california-public1a {} 
 variable avail_zone_california-public1b {} 
 
 
 
-variable avail_zone_california-private1c {} 
+variable avail_zone_california-private1a {} 
 variable avail_zone_california-private1b {} 
 
 //////////////////////////////////////////////////////////////

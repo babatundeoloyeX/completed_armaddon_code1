@@ -665,9 +665,9 @@ resource "aws_route_table" "california-public" {
 
 //California Private Route Table Associations
 
-resource "aws_route_table_association" "california-private-c" {
+resource "aws_route_table_association" "california-private-a" {
   provider = aws.california
-  subnet_id      = aws_subnet.california-private-subnet-1c.id
+  subnet_id      = aws_subnet.california-private-subnet-1a.id
   route_table_id = aws_route_table.california-private.id
 }
 
@@ -681,9 +681,9 @@ resource "aws_route_table_association" "california-private-b" {
 //California Public Route Table Associations
 
 
-resource "aws_route_table_association" "california-public-c" {
+resource "aws_route_table_association" "california-public-a" {
   provider = aws.california  
-  subnet_id      = aws_subnet.california-public-subnet-1c.id
+  subnet_id      = aws_subnet.california-public-subnet-1a.id
   route_table_id = aws_route_table.california-public.id
 }
 

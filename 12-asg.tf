@@ -485,7 +485,7 @@
    max_size              = 3
    desired_capacity      = 1
    vpc_zone_identifier   = [
-     aws_subnet.california-private-subnet-1c.id,
+     aws_subnet.california-private-subnet-1a.id,
      aws_subnet.california-private-subnet-1b.id,
    ]
    health_check_type          = "ELB"

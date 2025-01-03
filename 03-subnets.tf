@@ -370,13 +370,13 @@ resource "aws_subnet" "hongkong-private-subnet-1b"{
 
 #Public Subnet California
 
-resource "aws_subnet" "california-public-subnet-1c"{                
+resource "aws_subnet" "california-public-subnet-1a"{                
     vpc_id = aws_vpc.california-vpc.id                     
-    cidr_block = var.subnet_cidr_block_california-public1c              
-    availability_zone = var.avail_zone_california-public1c      
+    cidr_block = var.subnet_cidr_block_california-public1a              
+    availability_zone = var.avail_zone_california-public1a      
     provider    = aws.california 
     tags = {                                           
-        Name: "${var.env_prefix_california}-subnet-1c"     
+        Name: "${var.env_prefix_california}-subnet-1a"     
         Service: "Armageddon Phase 1"
         Owner = "MATTRESS AVENGERS"         
     }
@@ -400,13 +400,13 @@ resource "aws_subnet" "california-public-subnet-1b"{
 #Private Subnet California
 
 
-resource "aws_subnet" "california-private-subnet-1c"{                
+resource "aws_subnet" "california-private-subnet-1a"{                
     vpc_id = aws_vpc.california-vpc.id                     
-    cidr_block = var.subnet_cidr_block_california-private1c              
-    availability_zone = var.avail_zone_california-private1c       
+    cidr_block = var.subnet_cidr_block_california-private1a              
+    availability_zone = var.avail_zone_california-private1a       
     provider    = aws.california 
     tags = {                                           
-        Name: "${var.env_prefix_hongkong}-subnet-1c" 
+        Name: "${var.env_prefix_california}-subnet-1a" 
         Service: "Armageddon Phase 1"    
         Owner = "MATTRESS AVENGERS"         
     }
